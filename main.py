@@ -93,20 +93,17 @@ def main_program():
         if ask_for_other_item:
             continue
         else:
-
             # verifica la canasta
             m = 0  # counter
             print("Verifica la canasta de tu cliente")
             if len(price) == 1:
                 print("Producto 1: el precio es ", price[0], " y tiene ", quantity[0], "items")
                 return price, quantity
-                break
             else:
                 for i in range(len(price)):
                     m += 1
                     print("Producto ", m, ": el precio es ", price[i], " y tiene ", quantity[i], "items")
                 return price, quantity
-                break
 
 
 if __name__ == '__main__':
@@ -136,3 +133,10 @@ if __name__ == '__main__':
         print("Sub-total:", sub_total_3)
         print("Total:", total_pay_3)
         print("=" * 20)
+
+        continue_in_program = validate_input_yes_no("Quieres calcular el total a otro cliente? Si/No\n")
+        if continue_in_program:
+            continue
+        else:
+            print("Hasta luego!")
+            break
